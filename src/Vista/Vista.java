@@ -6,7 +6,12 @@ package Vista;
 
 import Controlador.ControladorMainVista;
 import javax.swing.ButtonModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
@@ -186,6 +191,71 @@ public class Vista extends javax.swing.JFrame {
         });
     }
 
+    public JButton getAddCpuButton() {
+        return addCpuButton;
+    }
+
+    public void setAddCpuButton(JButton addCpuButton) {
+        this.addCpuButton = addCpuButton;
+    }
+
+    public JButton getDeleteCpuButton() {
+        return deleteCpuButton;
+    }
+
+    public void setDeleteCpuButton(JButton deleteCpuButton) {
+        this.deleteCpuButton = deleteCpuButton;
+    }
+
+    public JButton getFiltreAplicarButton() {
+        return filtreAplicarButton;
+    }
+
+    public void setFiltreAplicarButton(JButton filtreAplicarButton) {
+        this.filtreAplicarButton = filtreAplicarButton;
+    }
+
+    public JComboBox<String> getFiltreComboBox() {
+        return filtreComboBox;
+    }
+
+    public void setFiltreComboBox(JComboBox<String> filtreComboBox) {
+        this.filtreComboBox = filtreComboBox;
+    }
+
+    public JLabel getFiltreLabel() {
+        return filtreLabel;
+    }
+
+    public void setFiltreLabel(JLabel filtreLabel) {
+        this.filtreLabel = filtreLabel;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JButton getModifyCpuButton() {
+        return modifyCpuButton;
+    }
+
+    public void setModifyCpuButton(JButton modifyCpuButton) {
+        this.modifyCpuButton = modifyCpuButton;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addCpuButton;
     private javax.swing.JButton deleteCpuButton;

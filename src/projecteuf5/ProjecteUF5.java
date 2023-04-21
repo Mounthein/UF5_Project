@@ -7,6 +7,7 @@ package projecteuf5;
 import Model.Cpu;
 import Model.Magatzem;
 import java.util.TreeSet;
+import Controlador.ControladorMainVista;
 
 /**
  *
@@ -20,7 +21,7 @@ public class ProjecteUF5 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-
+        ControladorMainVista ctl = new ControladorMainVista();
     }
     
 }

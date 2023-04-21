@@ -20,20 +20,14 @@ public class ControladorMainVista {
     private Magatzem mag;
     private Vista finestra;
 
-    public void run() {
-        // Metode d'inici de la vista
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-
-//                v_main.setVisible(true);
-//                v_main.setTitle("MVC Course");
-//                v_main.setLocationRelativeTo(null); // Place the window in position 0, in the center.
-            }
-        });
+    public ControladorMainVista() {
+        this.finestra = new Vista(this);
+        this.finestra.getjTable1().setModel(getCpuDataTable());
     }
-    
-    
+
+    // ---------------------------------------------------------- //
     // Metodes de generació de taula
+    // ---------------------------------------------------------- //
     public TableModel getCpuDataTable() {
         DefaultTableModel tm = new DefaultTableModel();
         tm.addColumn("Codi");
