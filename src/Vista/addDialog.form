@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="preuLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="optionalLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="coresLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="fabricantLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="dataLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tipusLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nomLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="codiLabelShow" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                                      <Component id="CodeLabelMod" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tipusComboBox" linkSize="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nomTextField" linkSize="1" min="-2" pref="94" max="-2" attributes="0"/>
+                                          <Component id="dataTextField" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="coresTextField" linkSize="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="preuTextField" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="37" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="intelRadioButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="amdRadioButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="igpuCheckBox" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="overclockCheckBox" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="acceptButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="backButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="codiLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CodeLabelMod" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="nomLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nomTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="tipusLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tipusComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="dataLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dataTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="fabricantLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="intelRadioButton" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="amdRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="coresLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="coresTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="optionalLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="igpuCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="overclockCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="preuLabelShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="preuTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="backButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="acceptButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="9" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="acceptButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Accept"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="backButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="codiLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Codi:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nomLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nom:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="tipusLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipus:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dataLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Data llen&#xe7;ament"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fabricantLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fabricant:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="coresLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cores:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="optionalLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Opcionals:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="preuLabelShow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Preu:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="preuTextField">
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="igpuCheckBox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="IGPU"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="overclockCheckBox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Overclock"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="intelRadioButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Intel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="intelRadioButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="coresTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="coresTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="dataTextField">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="tipusComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipusComboBoxActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nomTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="amdRadioButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AMD"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="CodeLabelMod">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Code"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
