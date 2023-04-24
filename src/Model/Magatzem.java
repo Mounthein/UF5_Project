@@ -24,13 +24,16 @@ public class Magatzem implements Serializable{
     private String nom;
     private String direccio;
     private TreeSet<Cpu> inventari = new TreeSet<>();
+    private static ArrayList CpuArchitectures;
     
     public Magatzem() {
+        this.CpuArchitectures = setArquitectures();
     }
 
     public Magatzem(String nom, String direccio) {
         this.nom = nom;
         this.direccio = direccio;
+        this.CpuArchitectures = setArquitectures();
     }
 
     public String getNom() {
@@ -55,6 +58,10 @@ public class Magatzem implements Serializable{
 
     public void setInventari(TreeSet<Cpu> inventari) {
         this.inventari = inventari;
+    }
+
+    public static ArrayList getCpuArchitectures() {
+        return CpuArchitectures;
     }
 
     @Override
@@ -133,6 +140,48 @@ public class Magatzem implements Serializable{
         return c;
     }
     
+    
+    public static ArrayList setArquitectures() {
+        // Create an ArrayList of AMD CPU architectures
+        ArrayList<String> CpuArchitectures = new ArrayList<>();
+        CpuArchitectures.add("K5");
+        CpuArchitectures.add("K6");
+        CpuArchitectures.add("K7 (Athlon)");
+        CpuArchitectures.add("K8 (Athlon 64, Opteron)");
+        CpuArchitectures.add("K10 (Phenom, Athlon II, Opteron 4000/6000)");
+        CpuArchitectures.add("Bulldozer (FX-Series)");
+        CpuArchitectures.add("Piledriver (FX-Series, Opteron 4300/6300)");
+        CpuArchitectures.add("Steamroller (A-Series APUs, Opteron X1150/X2150)");
+        CpuArchitectures.add("Excavator (A-Series APUs, Opteron X3000)");
+        CpuArchitectures.add("Zen (Ryzen, EPYC)");
+        CpuArchitectures.add("Zen+ (Ryzen 2000 series, EPYC 7000 series)");
+        CpuArchitectures.add("Zen 2 (Ryzen 3000 series, EPYC 7002 series)");
+        CpuArchitectures.add("Zen 3 (Ryzen 5000 series, EPYC 7003 series)");
+
+        CpuArchitectures.add("8086");
+        CpuArchitectures.add("80286");
+        CpuArchitectures.add("80386");
+        CpuArchitectures.add("80486");
+        CpuArchitectures.add("Pentium (P5)");
+        CpuArchitectures.add("Pentium Pro (P6)");
+        CpuArchitectures.add("Pentium II");
+        CpuArchitectures.add("Pentium III");
+        CpuArchitectures.add("Pentium 4");
+        CpuArchitectures.add("Pentium M");
+        CpuArchitectures.add("Core (Core Duo, Core 2 Duo)");
+        CpuArchitectures.add("Nehalem (Core i7, Core i5)");
+        CpuArchitectures.add("Sandy Bridge (Core i7, Core i5)");
+        CpuArchitectures.add("Ivy Bridge (Core i7, Core i5)");
+        CpuArchitectures.add("Haswell (Core i7, Core i5)");
+        CpuArchitectures.add("Broadwell (Core i7, Core i5)");
+        CpuArchitectures.add("Skylake (Core i7, Core i5)");
+        CpuArchitectures.add("Kaby Lake (Core i7, Core i5)");
+        CpuArchitectures.add("Coffee Lake (Core i9, Core i7, Core i5)");
+        CpuArchitectures.add("Ice Lake (Core i7, Core i5)");
+        CpuArchitectures.add("Tiger Lake (Core i7, Core i5)");
+
+        return CpuArchitectures;
+    }
     
 }
 

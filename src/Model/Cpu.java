@@ -22,7 +22,7 @@ public class Cpu implements Comparable<Cpu>, Serializable {
     private double preu;
     private ArrayList<String> optionals = new ArrayList<>();
 
-    public Cpu(int codi, String arquitectura, String nom, String fabricant, int cores, double preu, String dataLlencament) {
+    public Cpu(int codi, String nom, String arquitectura, String dataLlencament, String fabricant, int cores, double preu) {
         this.codi = codi;
         this.arquitectura = arquitectura;
         this.nom = nom;
