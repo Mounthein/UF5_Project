@@ -26,8 +26,7 @@ public class ControladorMainVista {
         testMag();
         this.finestra = new Vista(this);
         this.finestra.getjTable1().setModel(getCpuDataTable());
-        this.finestra.getjTable1().setEnabled(false);
-        this.setComboBoxIndex();
+        this.setFiltreOptions();
         this.finestra.setVisible(true);
     }
     
@@ -45,19 +44,15 @@ public class ControladorMainVista {
         a.add("opt2");
         c.setOptionals(a);
     }
-    // ---------------------------------------------------------- //
-    // set index of combo box
-    // ---------------------------------------------------------- //
-    private void setComboBoxIndex(){
-        ArrayList<String> cpusArc = new ArrayList<>();
-        for (String arc : cpusArc) {
-            this.finestra.getFiltreComboBox().addItem(arc);
-        }
-    }
+    
     
     // ---------------------------------------------------------- //
     // Apply Filter
     // ---------------------------------------------------------- //
+    public void applyFiltre(){
+        String filtro = this.finestra.getFiltreComboBox().getSelectedItem().toString();
+        this.finestra.getjTable1().setModel(getCpuDataTableFiltre(filtro));
+    }
     
     // ---------------------------------------------------------- //
     // Metodes de generació de taula
@@ -73,9 +68,9 @@ public class ControladorMainVista {
         tm.addColumn("Fabricant");
         tm.addColumn("Cores");
         tm.addColumn("Preu");
-        //tm.addColumn("Extres");
+        tm.addColumn("Extres");
         for (Cpu producte : this.mag.getInventari()) {
-            Object[] fila = new Object[7];
+            Object[] fila = new Object[8];
             fila[0] = producte.getCodi();
             fila[1] = producte.getNom();
             fila[2] = producte.getArquitectura();
@@ -83,7 +78,7 @@ public class ControladorMainVista {
             fila[4] = producte.getFabricant();
             fila[5] = producte.getCores();
             fila[6] = producte.getPreu();
-            //fila[7] = "test";
+            fila[7] = producte.getOptionalString();
 
             tm.addRow(fila);
         }
@@ -102,7 +97,7 @@ public class ControladorMainVista {
         tm.addColumn("Extres");
         for (Cpu producte : mag.getInventari()) {
             if (producte.getArquitectura().equals(arc)) {
-                Object[] fila = new Object[7];
+                Object[] fila = new Object[8];
                 fila[0] = producte.getCodi();
                 fila[1] = producte.getNom();
                 fila[2] = producte.getArquitectura();
@@ -121,8 +116,11 @@ public class ControladorMainVista {
     // ---------------------------------------------------------- //
     // Emplenar camps del filtre
     // ---------------------------------------------------------- //
-    public JComboBox<String> setFiltreOptions(){
-        return null;
+    public void setFiltreOptions(){
+        ArrayList<String> j = Magatzem.getCpuArchitectures();
+        for (String object : j) {
+            this.finestra.getFiltreComboBox().addItem(object);
+        }
     }
     
 }

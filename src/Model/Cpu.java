@@ -147,6 +147,7 @@ public class Cpu implements Comparable<Cpu>, Serializable {
         if (optionals.size() > 0) {
             for (String optional : optionals) {
                 x += optional;
+                x += ", ";
             }
         }
         return x;
