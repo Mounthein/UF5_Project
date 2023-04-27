@@ -85,8 +85,18 @@ public class Vista extends javax.swing.JFrame {
         });
 
         modifyCpuButton.setText("Modificar Cpu");
+        modifyCpuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyCpuButtonActionPerformed(evt);
+            }
+        });
 
         deleteCpuButton.setText("Eliminar Cpu");
+        deleteCpuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCpuButtonActionPerformed(evt);
+            }
+        });
 
         filtreLabel.setText("Filtre");
 
@@ -150,12 +160,23 @@ public class Vista extends javax.swing.JFrame {
 
     private void addCpuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCpuButtonActionPerformed
         // TODO add your handling code here:
+        ctrl.openAddMenu();
     }//GEN-LAST:event_addCpuButtonActionPerformed
 
     private void filtreComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtreComboBoxActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_filtreComboBoxActionPerformed
+
+    private void modifyCpuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyCpuButtonActionPerformed
+        // TODO add your handling code here:
+        ctrl.openModMenu();
+    }//GEN-LAST:event_modifyCpuButtonActionPerformed
+
+    private void deleteCpuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCpuButtonActionPerformed
+        // TODO add your handling code here:
+        ctrl.openDelMenu();
+    }//GEN-LAST:event_deleteCpuButtonActionPerformed
 
     /**
      * @param args the command line arguments

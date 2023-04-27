@@ -69,14 +69,18 @@ public class Magatzem implements Serializable{
         return "Magatzem{" + "nom=" + nom + ", direccio=" + direccio + ", inventari=" + inventari + '}';
     }
     
-    // Add to inventori
-    public void addProduct(Cpu c){
+    // Add and update to inventori
+    public void addUpdateProduct(Cpu c){
         if (c.getCodi()> 0) {
+            if (inventari.contains(c)) {
+                inventari.remove(c);
+            }
             inventari.add(c);
         }
     }
     
     // Update product
+    // redundant
     public void updateProduct(Cpu c){
         this.inventari.remove(c);
         this.inventari.add(c);

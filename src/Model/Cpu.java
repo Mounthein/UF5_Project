@@ -152,5 +152,18 @@ public class Cpu implements Comparable<Cpu>, Serializable {
         }
         return x;
     }
+    
+    public void addOptional(String added){
+        if (!this.optionals.contains(added)) {
+            this.optionals.add(added);
+        }
+        
+    }
+    
+    public void delOptionals(String deleted) {
+        if (this.optionals.contains(deleted)) {
+            this.optionals.remove(deleted);
+        }
+    }
 
 }

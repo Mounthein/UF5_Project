@@ -19,46 +19,45 @@ import javax.swing.JComboBox;
  */
 public class ControladorMainVista {
 
-    private Magatzem mag = new Magatzem("Pepet", "miguelo");
-    private Vista finestra;
+    private final Magatzem mag = new Magatzem("Pepet", "miguelo");
+    private final Vista finestra;
 
     public ControladorMainVista() {
         testMag();
         this.finestra = new Vista(this);
         this.finestra.getjTable1().setModel(getCpuDataTable());
+        this.finestra.getjTable1().setDefaultEditor(Object.class, null);
         this.setFiltreOptions();
         this.finestra.setVisible(true);
     }
-    
+
     // ---------------------------------------------------------- //
     // Entrada de dades de prova
     // ---------------------------------------------------------- //
-    private void testMag(){
+    private void testMag() {
         Cpu c = new Cpu(1, "Intel Core i9-11900K", "Rocket Lake", "March 2021", "Intel", 8, 539.00);
         Cpu c1 = new Cpu(2, "AMD Ryzen 9 5950X", "Zen 3", "November 2020", "AMD", 16, 799.00);
 
-        this.mag.addProduct(c);
-        this.mag.addProduct(c1);
+        this.mag.addUpdateProduct(c);
+        this.mag.addUpdateProduct(c1);
         ArrayList<String> a = new ArrayList<>();
         a.add("opt1");
         a.add("opt2");
         c.setOptionals(a);
     }
-    
-    
+
     // ---------------------------------------------------------- //
     // Apply Filter
     // ---------------------------------------------------------- //
-    public void applyFiltre(){
+    public void applyFiltre() {
         String filtro = this.finestra.getFiltreComboBox().getSelectedItem().toString();
         this.finestra.getjTable1().setModel(getCpuDataTableFiltre(filtro));
     }
-    
+
     // ---------------------------------------------------------- //
     // Metodes de generació de taula
     // ---------------------------------------------------------- //
     // per alguna raó que desconec, la septima columna fa que peti amb un out of bound
-    
     public TableModel getCpuDataTable() {
         DefaultTableModel tm = new DefaultTableModel();
         tm.addColumn("Codi");
@@ -112,15 +111,52 @@ public class ControladorMainVista {
         }
         return tm;
     }
-    
+
     // ---------------------------------------------------------- //
     // Emplenar camps del filtre
     // ---------------------------------------------------------- //
-    public void setFiltreOptions(){
+    public void setFiltreOptions() {
         ArrayList<String> j = Magatzem.getCpuArchitectures();
         for (String object : j) {
             this.finestra.getFiltreComboBox().addItem(object);
         }
     }
+
+    // ---------------------------------------------------------- //
+    // Opertura de finestra de addició
+    // ---------------------------------------------------------- //
+    public void openAddMenu() {
+        ControladorDialegCpu conSec = new ControladorDialegCpu(finestra, mag.getInventari().last().getCodi(), mag);
+    }
+
+    // ---------------------------------------------------------- //
+    // Opertura de finestra de modificació
+    // ---------------------------------------------------------- //
+    public void openModMenu() {
+
+        int fila = this.finestra.getjTable1().getSelectedRow();
+        ArrayList<String> dades = new ArrayList<>();
+
+        if (fila >= 0) {
+            int codis = Integer.parseInt(this.finestra.getjTable1().getValueAt(fila, 0).toString());
+            
+            Cpu cMod = new Cpu(codis);
+            cMod = mag.getProduct(cMod);
+            ControladorDialegCpu conSec = new ControladorDialegCpu(finestra, cMod, mag, true);
+        }
+    }
     
+    public void openDelMenu() {
+
+        int fila = this.finestra.getjTable1().getSelectedRow();
+        ArrayList<String> dades = new ArrayList<>();
+
+        if (fila >= 0) {
+            int codis = Integer.parseInt(this.finestra.getjTable1().getValueAt(fila, 0).toString());
+            
+            Cpu cMod = new Cpu(codis);
+            cMod = mag.getProduct(cMod);
+            ControladorDialegCpu conSec = new ControladorDialegCpu(finestra, cMod, mag, false);
+        }
+    }
 }

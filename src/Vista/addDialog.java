@@ -4,6 +4,14 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import Controlador.ControladorDialegCpu;
+
 /**
  *
  * @author marc
@@ -13,6 +21,8 @@ public class addDialog extends javax.swing.JDialog {
     /**
      * Creates new form addDialog
      */
+    
+    private ControladorDialegCpu ctrl;
     public addDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -27,6 +37,7 @@ public class addDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         acceptButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         codiLabelShow = new javax.swing.JLabel();
@@ -47,10 +58,19 @@ public class addDialog extends javax.swing.JDialog {
         nomTextField = new javax.swing.JTextField();
         amdRadioButton = new javax.swing.JRadioButton();
         CodeLabelMod = new javax.swing.JLabel();
+        NameLabel = new javax.swing.JLabel();
+        DataLabel = new javax.swing.JLabel();
+        CoresLabel = new javax.swing.JLabel();
+        PreuLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         acceptButton.setText("Accept");
+        acceptButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acceptButtonActionPerformed(evt);
+            }
+        });
 
         backButton.setText("Back");
 
@@ -74,6 +94,7 @@ public class addDialog extends javax.swing.JDialog {
 
         overclockCheckBox.setText("Overclock");
 
+        buttonGroup1.add(intelRadioButton);
         intelRadioButton.setText("Intel");
         intelRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,45 +120,41 @@ public class addDialog extends javax.swing.JDialog {
             }
         });
 
+        buttonGroup1.add(amdRadioButton);
         amdRadioButton.setText("AMD");
 
         CodeLabelMod.setText("Code");
+
+        NameLabel.setForeground(new java.awt.Color(255, 51, 51));
+        NameLabel.setText("Llargada minima de 5");
+
+        DataLabel.setForeground(new java.awt.Color(255, 51, 51));
+        DataLabel.setText("Llargada minima de 5");
+
+        CoresLabel.setForeground(new java.awt.Color(255, 51, 51));
+        CoresLabel.setText("S'ha de introduir un numero");
+
+        PreuLabel.setForeground(new java.awt.Color(255, 51, 51));
+        PreuLabel.setText("S'ha de introduir un numero");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(preuLabelShow)
+                    .addComponent(optionalLabelShow)
+                    .addComponent(coresLabelShow)
+                    .addComponent(fabricantLabelShow)
+                    .addComponent(dataLabelShow)
+                    .addComponent(tipusLabelShow)
+                    .addComponent(nomLabelShow)
+                    .addComponent(codiLabelShow))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(preuLabelShow)
-                            .addComponent(optionalLabelShow)
-                            .addComponent(coresLabelShow)
-                            .addComponent(fabricantLabelShow)
-                            .addComponent(dataLabelShow)
-                            .addComponent(tipusLabelShow)
-                            .addComponent(nomLabelShow)
-                            .addComponent(codiLabelShow))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(115, 115, 115)
-                                        .addComponent(CodeLabelMod))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(90, 90, 90)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tipusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(nomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(dataTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(90, 90, 90)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(coresTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(preuTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(63, 63, 63)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,19 +162,38 @@ public class addDialog extends javax.swing.JDialog {
                                         .addComponent(intelRadioButton)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(amdRadioButton))
-                                    .addComponent(igpuCheckBox)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(igpuCheckBox)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(overclockCheckBox, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(acceptButton)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(backButton))
+                                    .addComponent(nomTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tipusComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dataTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(coresTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(preuTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(overclockCheckBox)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(acceptButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(backButton)))))
-                .addGap(130, 130, 130))
+                            .addComponent(NameLabel)
+                            .addComponent(DataLabel)
+                            .addComponent(PreuLabel)
+                            .addComponent(CoresLabel))
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CodeLabelMod)
+                        .addGap(206, 206, 206))))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {coresTextField, dataTextField, nomTextField, preuTextField, tipusComboBox});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {CoresLabel, DataLabel, NameLabel, PreuLabel});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +205,8 @@ public class addDialog extends javax.swing.JDialog {
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomLabelShow)
-                    .addComponent(nomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NameLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tipusLabelShow)
@@ -177,31 +214,36 @@ public class addDialog extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dataLabelShow)
-                    .addComponent(dataTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dataTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DataLabel))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(intelRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(fabricantLabelShow)
                         .addComponent(amdRadioButton)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(coresLabelShow)
-                    .addComponent(coresTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(coresTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CoresLabel)))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(optionalLabelShow)
                     .addComponent(igpuCheckBox)
                     .addComponent(overclockCheckBox))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(preuLabelShow)
-                    .addComponent(preuTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(preuTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PreuLabel)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButton)
                     .addComponent(acceptButton))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -222,6 +264,11 @@ public class addDialog extends javax.swing.JDialog {
     private void coresTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coresTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_coresTextFieldActionPerformed
+
+    private void acceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButtonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_acceptButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,11 +312,83 @@ public class addDialog extends javax.swing.JDialog {
         });
     }
 
+    public JLabel getCodeLabelMod() {
+        return CodeLabelMod;
+    }
+
+    public JButton getAcceptButton() {
+        return acceptButton;
+    }
+
+    public JRadioButton getAmdRadioButton() {
+        return amdRadioButton;
+    }
+
+    public JButton getBackButton() {
+        return backButton;
+    }
+
+    public JTextField getCoresTextField() {
+        return coresTextField;
+    }
+
+    public JTextField getDataTextField() {
+        return dataTextField;
+    }
+
+    public JCheckBox getIgpuCheckBox() {
+        return igpuCheckBox;
+    }
+
+    public JRadioButton getIntelRadioButton() {
+        return intelRadioButton;
+    }
+
+    public JTextField getNomTextField() {
+        return nomTextField;
+    }
+
+    public JCheckBox getOverclockCheckBox() {
+        return overclockCheckBox;
+    }
+
+    public JTextField getPreuTextField() {
+        return preuTextField;
+    }
+
+    public JComboBox<String> getTipusComboBox() {
+        return tipusComboBox;
+    }
+
+    public JLabel getCoresLabel() {
+        return CoresLabel;
+    }
+
+    public JLabel getDataLabel() {
+        return DataLabel;
+    }
+
+    public JLabel getNameLabel() {
+        return NameLabel;
+    }
+
+    public JLabel getPreuLabel() {
+        return PreuLabel;
+    }
+
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CodeLabelMod;
+    private javax.swing.JLabel CoresLabel;
+    private javax.swing.JLabel DataLabel;
+    private javax.swing.JLabel NameLabel;
+    private javax.swing.JLabel PreuLabel;
     private javax.swing.JButton acceptButton;
     private javax.swing.JRadioButton amdRadioButton;
     private javax.swing.JButton backButton;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel codiLabelShow;
     private javax.swing.JLabel coresLabelShow;
     private javax.swing.JTextField coresTextField;

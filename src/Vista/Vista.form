@@ -134,11 +134,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Modificar Cpu"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifyCpuButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="deleteCpuButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar Cpu"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteCpuButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="filtreLabel">
       <Properties>
